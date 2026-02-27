@@ -1,7 +1,11 @@
 ﻿import path from 'path'
 import { defineConfig } from 'vite'
 
+const repoName = 'frontend_project_english_flux_academy_landing'
+const isGithubPagesBuild = process.env.GITHUB_PAGES === 'true'
+
 export default defineConfig({
+  base: isGithubPagesBuild ? `/${repoName}/` : '/',
   build: {
     rollupOptions: {
       input: {
