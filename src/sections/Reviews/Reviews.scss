@@ -1,0 +1,48 @@
+.reviews {
+  padding-block: fluid-to-laptop(42, 24);
+}
+
+.reviews__header {
+  margin-bottom: fluid-to-laptop(24, 14);
+}
+
+.reviews__eyebrow {
+  margin-bottom: 8px;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 13px;
+}
+
+.reviews__title {
+  font-size: fluid(40, 28);
+}
+
+.reviews__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.review-card {
+  padding: fluid-to-laptop(22, 18);
+  border-radius: var(--radius-l);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+.review-card__text {
+  margin-bottom: 12px;
+  line-height: 1.55;
+}
+
+.review-card__author {
+  font-weight: 700;
+  color: var(--color-text-muted);
+}
+
+@include tablet {
+  .reviews__grid {
+    grid-template-columns: 1fr;
+  }
+}

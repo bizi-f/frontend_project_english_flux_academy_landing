@@ -1,0 +1,23 @@
+﻿.not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  padding-block: fluid-to-laptop(64, 32);
+}
+
+.not-found__code {
+  font-size: fluid(92, 54);
+  font-weight: 800;
+  color: var(--color-accent);
+}
+
+.not-found__title {
+  font-size: fluid(48, 30);
+}
+
+.not-found__text {
+  max-width: 60ch;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+}

@@ -1,0 +1,50 @@
+﻿.about {
+  padding-block: fluid-to-laptop(56, 28);
+}
+
+.about__header {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.about__eyebrow {
+  color: var(--color-accent);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.about__title {
+  font-size: fluid(46, 30);
+}
+
+.about__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.about-card {
+  padding: fluid-to-laptop(24, 18);
+  border-radius: var(--radius-l);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+.about-card__title {
+  margin-bottom: 10px;
+}
+
+.about-card__text {
+  color: var(--color-text-muted);
+  line-height: 1.55;
+}
+
+@include tablet {
+  .about__grid {
+    grid-template-columns: 1fr;
+  }
+}

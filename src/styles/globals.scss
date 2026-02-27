@@ -1,0 +1,103 @@
+﻿@use './helpers' as *;
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html.is-lock {
+  overflow: hidden;
+}
+
+body {
+  @include fluid-text(18, 15);
+
+  font-family: 'Segoe UI', 'Inter', sans-serif;
+  color: var(--color-text);
+  background:
+    radial-gradient(
+      circle at 12% 8%,
+      color-mix(in srgb, var(--color-accent-2) 28%, transparent),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 94% 0,
+      color-mix(in srgb, var(--color-accent) 20%, transparent),
+      transparent 44%
+    ),
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--color-bg) 82%, var(--color-surface)) 0%,
+      var(--color-bg) 100%
+    );
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+a,
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+  transition-duration: var(--transition-duration);
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: fluid-to-laptop(14, 6);
+}
+
+:focus-visible {
+  @include focus-visible;
+}
+
+[data-js-reveal] {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+}
+
+[data-js-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.program-card,
+.review-card,
+.pricing-card,
+.about-card {
+  transition:
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+
+  @include hover {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 34px
+      color-mix(in srgb, var(--color-shadow) 88%, transparent);
+  }
+}
