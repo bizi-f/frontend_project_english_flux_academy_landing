@@ -1,8 +1,9 @@
 ﻿import Button from '@/components/Button/Button'
+import { withBase } from '@/lib/sitePath'
 
 const Header =
   () => `<header class="site-header container" data-js-reveal data-js-mobile-menu>
-  <a class="site-header__brand" href="/" aria-label="English Flux Academy">
+  <a class="site-header__brand" href="${withBase('/')}" aria-label="English Flux Academy">
     <span class="site-header__brand-mark">EF</span>
     <span class="site-header__brand-text">English Flux Academy</span>
   </a>
@@ -38,17 +39,16 @@ const Header =
         <a class="site-header__menu-link" href="#reviews" data-js-mobile-menu-link>Отзывы</a>
         <a class="site-header__menu-link" href="#pricing" data-js-mobile-menu-link>Тарифы</a>
         <a class="site-header__menu-link" href="#faq" data-js-mobile-menu-link>Вопросы</a>
-        <a class="site-header__menu-link" href="/about.html" data-js-mobile-menu-link>О школе</a>
+        <a class="site-header__menu-link" href="${withBase('/about.html')}" data-js-mobile-menu-link>О школе</a>
       </nav>
       <div class="site-header__menu-controls">
         <button class="theme-switch theme-switch--mobile" type="button" data-js-theme-toggle>
           <span class="theme-switch__text" data-js-theme-toggle-text>Темная</span>
         </button>
-        ${Button({ label: 'Записаться на звонок', href: '/#cta', mode: 'ghost', className: 'site-header__menu-button', extraAttrs: { 'data-js-mobile-menu-link': '' } })}
+        ${Button({ label: 'Записаться на звонок', href: withBase('/#cta'), mode: 'ghost', className: 'site-header__menu-button', extraAttrs: { 'data-js-mobile-menu-link': '' } })}
       </div>
     </div>
   </dialog>
 </header>`
 
 export default Header
-

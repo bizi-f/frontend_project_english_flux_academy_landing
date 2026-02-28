@@ -9,6 +9,7 @@ import RevealOnScroll from '@/modules/RevealOnScroll'
 import LeadForm from '@/modules/LeadForm'
 import MobileMenu from '@/modules/MobileMenu'
 import MobileEnrollBarVisibility from '@/modules/MobileEnrollBarVisibility'
+import { normalizePathname } from '@/lib/sitePath'
 
 const pagesByPath = {
   '/': {
@@ -39,7 +40,8 @@ const mount = () => {
     return
   }
 
-  const currentPage = pagesByPath[window.location.pathname] ?? {
+  const currentPath = normalizePathname(window.location.pathname)
+  const currentPage = pagesByPath[currentPath] ?? {
     title: 'Страница не найдена | English Flux Academy',
     render: notFoundPage,
     appOptions: { showMobileEnrollBar: false },
